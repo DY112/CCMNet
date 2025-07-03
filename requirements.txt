@@ -1,0 +1,8 @@
+numpy==1.24.2
+torch==2.2.1
+torchvision==0.17.1
+tqdm==4.66.5
+wandb==0.18.0
+opencv-python==4.9.0.80
+scipy==1.14.1
+colour-science==0.4.4
