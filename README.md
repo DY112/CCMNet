@@ -1,6 +1,5 @@
 # CCMNet: Leveraging Calibrated Color Correction Matrices for Cross-Camera Color Constancy
 
-<!-- ### [Imitating Human Videos via Cross-Embodiment Skill Representations](https://uniskill.github.io)    -->
 *[Dongyoung Kim](https://www.dykim.me/home)*<sup>1</sup>, *[Mahmoud Afifi](https://www.mafifi.info/)*<sup>2</sup>, *[Dongyun Kim](https://sites.google.com/view/dongyunkim/home)*<sup>1</sup>, *[Michael S. Brown](https://www.eecs.yorku.ca/~mbrown/)*<sup>2</sup>, and *[Seon Joo Kim](https://www.ciplab.kr/members/professor)*<sup>1</sup>
 
 <sup>1</sup>Yonsei University  &ensp; <sup>2</sup>AI Center - Toronto, Samsung Electronics
