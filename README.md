@@ -6,13 +6,13 @@
 
 [[Paper](https://arxiv.org/abs/2504.07959)] | [[Project page](https://www.dykim.me/projects/ccmnet)]
 
----
+
 
 ## 1. 🎯 Overview
 
 CCMNet is a deep learning-based methodology for maintaining color consistency in images captured by different cameras. This project aims to achieve cross-camera color constancy by leveraging camera-specific Color Correction Matrices (CCM). **The core idea is to learn a Camera Fingerprint Embedding (CFE) that represents the unique color characteristics of each camera.** This CFE is then used to predict an appropriate illumination chromaticity vector for an input image, thereby correcting its colors.
 
----
+
 
 ## 2. 📊 Dataset
 
@@ -26,7 +26,6 @@ For detailed information about the datasets used in this project, please refer t
 
 > **Note**: IMX135-BLCCSC camera from Intel-TAU dataset was not used in training and testing as its Color Correction Matrix (CCM) was not provided.
 
----
 
 ## 3. 📦 Requirements
 
@@ -59,7 +58,7 @@ pip install -r requirements.txt
 - CUDA toolkit for GPU acceleration
 - TensorBoard for training visualization
 
----
+
 
 ## 4. 🚀 Usage
 
