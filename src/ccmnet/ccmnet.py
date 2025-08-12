@@ -9,7 +9,7 @@ import torch
 from src import ops
 import math
 from src.diff_hist import DifferentiableHistogram
-from layers import *
+from src.ccmnet.layers import *
 import torch.fft as fft
 import numpy as np
 import colour
