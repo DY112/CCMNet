@@ -6,12 +6,15 @@
 
 [[Paper](https://arxiv.org/abs/2504.07959)] | [[Project page](https://www.dykim.me/projects/ccmnet)]
 
+---
 
-## Overview
+## 1. 🎯 Overview
 
 CCMNet is a deep learning-based methodology for maintaining color consistency in images captured by different cameras. This project aims to achieve cross-camera color constancy by leveraging camera-specific Color Correction Matrices (CCM). **The core idea is to learn a Camera Fingerprint Embedding (CFE) that represents the unique color characteristics of each camera.** This CFE is then used to predict an appropriate illumination chromaticity vector for an input image, thereby correcting its colors.
 
-## Dataset
+---
+
+## 2. 📊 Dataset
 
 For detailed information about the datasets used in this project, please refer to the [`data_scripts/README.md`](./data_scripts/README.md) file.
 
@@ -23,9 +26,44 @@ For detailed information about the datasets used in this project, please refer t
 
 > **Note**: IMX135-BLCCSC camera from Intel-TAU dataset was not used in training and testing as its Color Correction Matrix (CCM) was not provided.
 
-## Usage
+---
 
-### Training
+## 3. 📦 Requirements
+
+### Environment Setup
+- Python 3.8+
+- CUDA 11.8+ (for GPU support)
+
+### Package Installation
+```bash
+pip install -r requirements.txt
+```
+
+### Key Dependencies
+- PyTorch 2.2.1
+- TorchVision 0.17.1
+- NumPy 1.24.2
+- OpenCV 4.9.0.80
+- Colour-Science 0.4.4
+- Weights & Biases 0.18.0
+- SciPy 1.14.1
+- tqdm 4.66.5
+- RawPy 0.18.0
+- Scikit-Image 0.24.0
+- Pillow 10.4.0
+- Matplotlib 3.9.2
+- PyExifTool 0.5.6
+- ExifRead 3.0.0
+
+### Optional Dependencies
+- CUDA toolkit for GPU acceleration
+- TensorBoard for training visualization
+
+---
+
+## 4. 🚀 Usage
+
+### 4.1 Training
 
 The model is trained using a leave-one-out strategy, where one dataset is used for testing, and the remaining datasets are used for training.
 
@@ -86,7 +124,7 @@ python train.py \
 *   `--visualize-training`: Flag to enable visualization of training progress (TensorBoard images and local validation sample images) (default: disabled).
 </details>
 
-### Testing
+### 4.2 Testing
 
 The model is tested on datasets not seen during training. Various visualization options are available.
 
@@ -135,7 +173,7 @@ python test.py \
 *   `--visualize-intermediate`: Flag to save intermediate outputs of the network (P, F_chroma, B, etc.) (default: disabled).
 *   `--add-color-bar`: Flag to add a color bar indicating illuminant color to saved images (default: disabled). If this flag is present, color bars are added.
 
-### Evaluation
+### 4.3 Evaluation
 
 After running the test script, the results are saved in the `results/[MODEL_NAME]` directory relative to the project root. To evaluate these results, use the evaluation script from the `evaluation` directory:
 
@@ -164,14 +202,20 @@ This will calculate and display the following metrics for the test results:
 
 The evaluation script reads the ground truth (`gt.mat`) and predicted results (`results.mat`) from the `../results/[MODEL_NAME]` directory and computes various error metrics to assess the model's performance.
 
-## Acknowledgements
+---
+
+## 5. 🙏 Acknowledgements
 
 This work is based on the **C5** [https://github.com/mahmoudnafifi/C5]. We thank the authors for their excellent work.
 
-## Citation
+---
+
+## 6. 📚 Citation
 
 TBD
 
-## License
+---
+
+## 7. 📄 License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
