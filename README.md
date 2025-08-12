@@ -212,7 +212,16 @@ This work is based on the **C5** [https://github.com/mahmoudnafifi/C5]. We thank
 
 ## 6. 📚 Citation
 
-TBD
+```
+@inproceedings{kim2025ccmnet,
+  title = {CCMNet: Leveraging Calibrated Color Correction Matrices for Cross-Camera Color Constancy},
+  author = {Dongyoung Kim and Mahmoud Afifi and Dongyun Kim and Michael S. Brown and Seon Joo Kim},
+  booktitle = {Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)},
+  year = {2025},
+  pages = {to appear},
+  url = {https://www.dykim.me/projects/ccmnet}
+}
+```
 
 ---
 
