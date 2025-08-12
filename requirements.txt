@@ -6,3 +6,9 @@ wandb==0.18.0
 opencv-python==4.9.0.80
 scipy==1.14.1
 colour-science==0.4.4
+rawpy==0.18.0
+scikit-image==0.24.0
+pillow==10.4.0
+matplotlib==3.9.2
+PyExifTool==0.5.6
+ExifRead==3.0.0
