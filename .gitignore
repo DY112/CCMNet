@@ -1,5 +1,8 @@
 __pycache__/
 *.pyc
 checkpoints_model/
-models/
+models/*
+!models/test_Cube+.pth
+!models/test_NUS.pth
+!models/test_Gehler-Shi.pth
 white_balanced_images/

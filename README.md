@@ -60,9 +60,29 @@ pip install -r requirements.txt
 
 
 
-## 4. 🚀 Usage
+## 4. 🎯 Pretrained Models
 
-### 4.1 Training
+Pretrained checkpoints trained with the leave-one-out strategy are included in the [`models/`](./models) directory — **no extra download required**. Each model is trained on all datasets *except* the one it is named after, which is held out for testing.
+
+| Test set | Checkpoint (`-n`) | Mean | Med. | Best 25% | Worst 25% | Tri. |
+|:--|:--|:--:|:--:|:--:|:--:|:--:|
+| Cube+ | `test_Cube+` | 1.68 | 1.16 | 0.38 | 3.89 | 1.26 |
+| NUS-8 | `test_NUS` | 2.32 | 1.71 | 0.53 | 5.18 | 1.83 |
+| Gehler-Shi | `test_Gehler-Shi` | 2.23 | 1.53 | 0.36 | 5.46 | 1.62 |
+
+<sub>Angular error in degrees, reproducing Table 1 of the paper. All checkpoints use `-cfefn 8`.</sub>
+
+For example, to evaluate the Cube+ test set directly with the provided checkpoint:
+
+```bash
+python test.py -ts cube+ -n test_Cube+ -cfefn 8
+```
+
+
+
+## 5. 🚀 Usage
+
+### 5.1 Training
 
 The model is trained using a leave-one-out strategy, where one dataset is used for testing, and the remaining datasets are used for training.
 
@@ -123,7 +143,7 @@ python train.py \
 *   `--visualize-training`: Flag to enable visualization of training progress (TensorBoard images and local validation sample images) (default: disabled).
 </details>
 
-### 4.2 Testing
+### 5.2 Testing
 
 The model is tested on datasets not seen during training. Various visualization options are available.
 
@@ -172,7 +192,7 @@ python test.py \
 *   `--visualize-intermediate`: Flag to save intermediate outputs of the network (P, F_chroma, B, etc.) (default: disabled).
 *   `--add-color-bar`: Flag to add a color bar indicating illuminant color to saved images (default: disabled). If this flag is present, color bars are added.
 
-### 4.3 Evaluation
+### 5.3 Evaluation
 
 After running the test script, the results are saved in the `results/[MODEL_NAME]` directory relative to the project root. To evaluate these results, use the evaluation script from the `evaluation` directory:
 
@@ -203,13 +223,13 @@ The evaluation script reads the ground truth (`gt.mat`) and predicted results (`
 
 ---
 
-## 5. 🙏 Acknowledgements
+## 6. 🙏 Acknowledgements
 
 This work is based on the **C5** [https://github.com/mahmoudnafifi/C5]. We thank the authors for their excellent work.
 
 ---
 
-## 6. 📚 Citation
+## 7. 📚 Citation
 
 ```
 @inproceedings{kim2025ccmnet,
@@ -224,6 +244,6 @@ This work is based on the **C5** [https://github.com/mahmoudnafifi/C5]. We thank
 
 ---
 
-## 7. 📄 License
+## 8. 📄 License
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
